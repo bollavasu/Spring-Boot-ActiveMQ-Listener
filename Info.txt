@@ -1,0 +1,19 @@
+
+We need the following things for ActiveMQ Listener
+
+1)we need the broker url in application.properties
+
+  spring.activemq.broker-url=tcp://localhost:61616
+  
+2)ActiveMQ Listener class  (We don't need to configure this class any where, @JmsListener method will be called automatically)
+
+  @JmsListener(destination = "VasuQueue") method will be called when a message comes to the queue
+  
+  
+1)Start the ActiveMQ sender application and send the messages
+
+2)Start the ActiveMQ Listener application and see the consumed messages in the console
+
+mvn clean install
+
+mvn spring-boot:run
